@@ -1,8 +1,6 @@
 
-# from django import forms
 from .models import Order
 from .models import Product
-# from .models import Profile
 from django.contrib.auth.models import User
 from django import forms
 from .models import Profile
@@ -31,8 +29,6 @@ class ClientProfileForm(forms.ModelForm):
 
 
 # Login
-from django import forms
-from .models import Profile
 
 class ProfileForm(forms.ModelForm):
     class Meta:
