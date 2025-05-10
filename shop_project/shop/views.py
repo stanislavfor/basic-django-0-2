@@ -119,7 +119,7 @@ def add_client(request):
         form = ClientForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('clients_list')  # перенаправляем на страницу со списком клиентов
+            return redirect('clients_list') 
     else:
         form = ClientForm()
     return render(request, 'add_client.html', {'form': form})
