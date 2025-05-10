@@ -1,0 +1,12 @@
+<!-- shop/templates/add_client.html -->
+{% extends 'base.html' %}
+{% block title %}Добавление нового клиента{% endblock %}
+
+{% block content %}
+<h1>Добавление нового клиента</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Добавить клиента</button>
+</form>
+{% endblock %}

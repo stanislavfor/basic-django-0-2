@@ -1,0 +1,23 @@
+<!-- shop/templates/order_detail.html -->
+{% extends 'base.html' %}
+{% block title %}Информация о заказе{% endblock %}
+
+{% block content %}
+<h1>Информация о заказе №{{ order.id }}</h1>
+<dl>
+    <dt>Клиент:</dt>
+    <dd>{{ order.client.username }}</dd>
+    <dt>Сумма заказа:</dt>
+    <dd>{{ order.total_amount }} руб.</dd>
+    <dt>Дата заказа:</dt>
+    <dd>{{ order.order_date }}</dd>
+</dl>
+<h2>Позиции заказа:</h2>
+<ol>
+    {% for item in order_items %}
+    <li>{{ item.product.name }} × {{ item.quantity }}, стоимость позиции: {{ item.product.price|floatformat:"2"}} руб.</li>
+    {% empty %}
+    <li>Нет позиций в заказе.</li>
+    {% endfor %}
+</ol>
+{% endblock %}

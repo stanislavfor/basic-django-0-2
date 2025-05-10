@@ -1,0 +1,26 @@
+<!-- shop/templates/products_list.html -->
+{% extends 'base.html' %}
+{% block title %}Список товаров{% endblock %}
+
+{% block content %}
+<h1>Список товаров</h1>
+<ul>
+    {% for product in products %}
+    <li>{{ product.name }} (Цена: {{ product.price }} руб. х {{ product.quantity }} шт./уп.) -
+        <a href="{% url 'delete_product' product.id %}">Удалить</a> |
+        <a href="{% url 'edit_product' product.id %}">Редактировать</a>
+    </li>
+    {% empty %}
+    <li>Нет товаров в базе данных.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_product' %}">Добавить новый товар</a>
+<ul>
+    {% for product in products %}
+    <li>Название: {{ product.name }}, Цена: {{ product.price }} руб., Количество: {{ product.quantity }}</li>
+    {% empty %}
+    <li>Нет продуктов в базе данных.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

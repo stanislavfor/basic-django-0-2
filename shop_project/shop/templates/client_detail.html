@@ -1,0 +1,21 @@
+<!-- shop/templates/client_detail.html -->
+{% extends 'base.html' %}
+{% block title %}Информация о клиенте{% endblock %}
+
+{% block content %}
+<h1>Информация о клиенте</h1>
+<dl>
+    <dt>Имя:</dt>
+    <dd>{{ client.user.first_name }}</dd>
+    <dt>Фамилия:</dt>
+    <dd>{{ client.user.last_name }}</dd>
+    <dt>Электронная почта:</dt>
+    <dd>{{ client.user.email }}</dd>
+    <dt>Номер телефона:</dt>
+    <dd>{{ client.phone_number }}</dd>
+    <dt>Город проживания:</dt>
+    <dd>{{ client.address_city }}</dd>
+    <dt>Дата регистрации:</dt>
+    <dd>{{ client.registration_date }}</dd>
+</dl>
+{% endblock %}

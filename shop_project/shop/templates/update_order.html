@@ -1,0 +1,12 @@
+<!-- shop/templates/update_order.html -->
+{% extends 'base.html' %}
+{% block title %}Редактирование заказа{% endblock %}
+
+{% block content %}
+<h1>Редактирование заказа №{{ order.id }}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить изменения</button>
+</form>
+{% endblock %}

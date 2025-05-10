@@ -1,0 +1,14 @@
+<!-- shop/templates/clients_list.html -->
+{% extends 'base.html' %}
+{% block title %}Список клиентов{% endblock %}
+
+{% block content %}
+<h1>Список клиентов</h1>
+<ul>
+    {% for client in clients %}
+    <li>{{ client.name }} (Телефон: {{ client.phone_number }}, Город: {{ client.address_city }})</li>
+    {% empty %}
+    <li>Нет клиентов в базе данных.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

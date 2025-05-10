@@ -1,0 +1,13 @@
+<!-- templates/add_product.html -->
+{% extends 'base.html' %}
+{% block title %}Добавить Продукт{% endblock %}
+
+{% block content %}
+<h1>Добавить новый продукт или товар</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Добавить"/>
+</form>
+<p><a href="{% url 'home' %}">Вернуться назад</a></p>
+{% endblock %}

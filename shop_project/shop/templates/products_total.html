@@ -1,0 +1,15 @@
+<!-- shop/templates/products_total.html -->
+{% extends 'base.html' %}
+{% block title %}Список продуктов{% endblock %}
+
+{% block content %}
+<h1>Список продуктов</h1>
+
+<ul>
+    {% for product in products %}
+    <li>Название: {{ product.name }}, Цена: {{ product.price }} руб., Количество: {{ product.quantity }}</li>
+    {% empty %}
+    <li>Нет продуктов в базе данных.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

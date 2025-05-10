@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+<h1>Добро пожаловать в наш магазин!</h1>
+<p>Здесь вы можете приобрести лучшие товары онлайн.</p>
+<ul class="vertical_list">
+    <li><a href="{% url 'add_product' %}">Добавить новый продукт</a></li>
+    <li><a href="{% url 'add_order' %}">Сделать и оформить заказ</a></li>
+    <li><a href="{% url 'update_profile' %}">Редактировать профиль пользователя</a></li>
+    <li><a href="{% url 'products_total' %}">Посмотреть Список продукт</a></li>
+</ul>
+{% endblock %}

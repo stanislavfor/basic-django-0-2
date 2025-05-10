@@ -1,0 +1,19 @@
+<!-- shop/templates/product_detail.html -->
+{% extends 'base.html' %}
+{% block title %}Информация о товаре{% endblock %}
+
+{% block content %}
+<h1>Информация о товаре</h1>
+<dl>
+    <dt>Название:</dt>
+    <dd>{{ product.name }}</dd>
+    <dt>Описание:</dt>
+    <dd>{{ product.description }}</dd>
+    <dt>Цена:</dt>
+    <dd>{{ product.price }} руб.</dd>
+    <dt>Количество:</dt>
+    <dd>{{ product.quantity }}</dd>
+    <dt>Дата добавления:</dt>
+    <dd>{{ product.added_date }}</dd>
+</dl>
+{% endblock %}

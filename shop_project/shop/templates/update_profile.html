@@ -1,0 +1,13 @@
+<!-- templates/update_profile.html -->
+{% extends 'base.html' %}
+{% block title %}Редактировать Профиль{% endblock %}
+
+{% block content %}
+<h1>Редактировать Профиль</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Сохранить"/>
+</form>
+<p><a href="{% url 'home' %}">Вернуться назад</a></p>
+{% endblock %}
