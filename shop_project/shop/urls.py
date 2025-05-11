@@ -34,7 +34,7 @@ from .views import products_total
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Панель администратора
-    path('', home_page, name='home'),              # Главное правило для корня сайта
+    path('', home_page, name='home'), # Главное правило для корня сайта
     path('add-product/', add_product, name='add_product'),
     path('edit-product/<int:pk>/', EditProduct.as_view(), name='edit_product'),
     path('delete-product/<int:product_id>/', delete_product, name='delete_product'),
